@@ -1,0 +1,27 @@
+[user]
+	name = José Ignacio Correa Moreno
+	email = icorream213@gmail.com
+
+[push]
+	autoSetupRemote = true
+
+[pull]
+	ff = false
+	rebase = true
+
+[core]
+	autocrlf = input
+  pager = delta
+  editor = nvim
+
+[delta]
+  navigate = true # use n and N to move between diffs sections
+
+[interactive]
+  diffFilter = delta --colo-only
+
+[merge]
+  conflicstyle = diff3
+
+[diff]
+  colorMoved = default

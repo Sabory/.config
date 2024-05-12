@@ -1,0 +1,143 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+"
+let mapleader=" "
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+set easymotion
+set textobj-entire
+set ReplaceWithRegister
+set exchange
+
+" Turn off sounds
+set noeb
+set novb
+set belloff=all
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+""" Editing and Reloading the Config
+nnoremap \e :e ~/.ideavimrc<CR>
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+
+""" Distraction Free Mode
+nnoremap <C-z> :action ToggleDistractionFreeMode<CR>
+
+""" Navigation
+nnoremap <C-w>s :action SplitHorizontally<CR>
+nnoremap <C-w>v :action SplitVertically<CR>
+nnoremap <C-w>q :action Unsplit<CR>
+sethandler <C-j> a:vim
+sethandler <C-k> a:vim
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+
+nnoremap <S-TAB> :action PreviousTab<CR>
+nnoremap <TAB> :action NextTab<CR>
+nnoremap <leader>nw :action EditSourceInNewWindow<CR>
+nnoremap <leader>n :action NextWindow<CR>
+nnoremap <leader>q :action CloseContent<CR>
+nnoremap <leader>Q :action CloseAllUnmodifiedEditors<CR>
+
+""" Editing source code
+set ideajoin
+set idearefactormode=keep
+vnoremap < <gv
+vnoremap > >gv
+nnoremap [[ :action MethodUp<CR>
+nnoremap ]] :action MethodDown<CR>
+nnoremap zc :action CollapseRegion<CR>
+nnoremap zo :action ExpandRegion<CR>
+
+nnoremap <leader>zc :action CollapseAllRegions<CR>
+nnoremap <leader>zo :action ExpandAllRegions<CR>
+
+nnoremap <leader>c :action CommentByLineComment<CR>
+nnoremap <leader>r :action Refactorings.QuickListPopupAction<CR>
+nnoremap <leader>rr :action RenameElement<CR>
+nnoremap <leader>rf :action RenameFile<CR>
+
+nnoremap <leader>f  :action ReformatCode<CR>
+nnoremap <leader>fi :action OptimizeImports<CR>
+nnoremap <leader>ca :action ShowIntentionActions<CR>
+
+nnoremap <leader>l :action RecentLocations<CR>
+nnoremap <leader>h  :action LocalHistory.ShowHistory<CR>
+nnoremap ge :action GotoNextError<CR>
+nnoremap gE :action GotoPreviousError<CR>
+
+""" Searching and Source Code Navigation
+set incsearch
+nnoremap <leader>st :action FindInPath<CR>
+nnoremap <leader>sa :action GotoAction<CR>
+nnoremap <leader>sf :action GotoFile<CR>
+nnoremap <leader>su :action FindUsages<CR>
+nnoremap <leader>sh :action CallHierarchy<CR>
+nnoremap <leader>ss :action GotoSymbol<CR>
+nnoremap <leader>sc :action GotoClass<CR>
+nnoremap <leader>sr :action RecentFiles<CR>
+
+nnoremap <leader>rt :action ReplaceInPath<CR>
+
+nnoremap <leader>b :action ShowNavBar<CR>
+
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gD :action GotoTypeDeclaration<CR>
+nnoremap gp :action GotToSuperMethod<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap gb :action Back<CR>
+nnoremap gf :action Forward<CR>
+
+nnoremap gc :action Diff.NextChange<CR>
+nnoremap gC :action Diff.PrevChange<CR>                                  
+
+""" Tool windows
+nnoremap <C-p> :action JumpToLastWindow<CR>
+nnoremap <C-x> :action HideAllWindows<CR>
+
+""" Running and Debugging
+nnoremap ,r :action ContextRun<CR>
+nnoremap ,c :action RunClass<CR>
+nnoremap ,f :action ChooseRunConfiguration<CR>
+nnoremap ,t :action ActivateRunToolWindow<CR>
+nnoremap ,u :action Rerun<CR>
+nnoremap ,f :action RerunFailedTests<CR>
+nnoremap ,b :action ToggleLineBreakpoint<CR>
+nnoremap ,d :action ContextDebug<CR>
+nnoremap ,n :action ActivateDebugToolWindow<CR>
+
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)

@@ -1,0 +1,22 @@
+session_name: fintual-app-session
+windows:
+  - window_name: Fintual Movile App
+    focus: True
+    layout: main-horizontal
+    options:
+      main-pane-height: 80%
+    shell_command_before:
+      - cd ~/ # run as a first command in all panes
+      - gh auth switch --user jignacio_fintual
+    panes:
+      - shell_command: # pane no. 1
+          - cd monolith
+      - shell_command:
+          - cd monolith
+      - shell_command:
+          - cd mobile-app
+          - git-update-refs
+          - yarn install
+          - yarn ios 
+      - shell_command:
+          - cd mobile-app
