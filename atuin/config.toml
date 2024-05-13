@@ -1,6 +1,8 @@
 # height of the search window
-inline_height = 40
+inline_height = 20
 style = "compact"
+keymap_mode="vim-normal"
+invert = true
 
 ## where to store your database, default is your system data directory
 ## linux/mac: ~/.local/share/atuin/history.db

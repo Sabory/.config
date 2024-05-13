@@ -27,6 +27,7 @@ export PUPPETEER_EXECUTABLE_PATH=`which chromium`
 
 # Fix para compilar Ruby 2.6.6
 export RUBY_CFLAGS="-Wno-error=implicit-function-declaration"
+export PATH=$PATH:$GEM_HOME/bin
 
 # Go Lang
 export GOPATH=$HOME/go

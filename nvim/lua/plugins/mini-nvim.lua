@@ -3,6 +3,13 @@ return {
 		"echasnovski/mini.indentscope",
 		version = false,
 		config = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
+        callback = function()
+          vim.b.miniindentscope_disable = true
+        end,
+      })
+
 			local indentscope = require("mini.indentscope")
 
 			indentscope.setup({
@@ -39,7 +46,7 @@ return {
 				},
 
 				-- Which character to use for drawing scope indicator
-        symbol = '',
+        symbol = '|',
         highlight = '',
 			})
 		end,
@@ -54,12 +61,10 @@ return {
 					["("] = { action = "open", pair = "()", neigh_pattern = "[^\\]." },
 					["["] = { action = "open", pair = "[]", neigh_pattern = "[^\\]." },
 					["{"] = { action = "open", pair = "{}", neigh_pattern = "[^\\]." },
-					["<"] = { action = "open", pair = "<>", neigh_pattern = "[^\\]." },
 
 					[")"] = { action = "close", pair = "()", neigh_pattern = "[^\\]." },
 					["]"] = { action = "close", pair = "[]", neigh_pattern = "[^\\]." },
 					["}"] = { action = "close", pair = "{}", neigh_pattern = "[^\\]." },
-					[">"] = { action = "close", pair = "<>", neigh_pattern = "[^\\]." },
 
 					['"'] = { action = "closeopen", pair = '""', neigh_pattern = "[^\\].", register = { cr = false } },
 					["'"] = { action = "closeopen", pair = "''", neigh_pattern = "[^%a\\].", register = { cr = false } },

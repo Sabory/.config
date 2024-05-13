@@ -15,6 +15,7 @@ plugins=(
 
 [[ -f ~/.config/zsh/plugins/git-custom.zsh ]] && source ~/.config/zsh/plugins/git-custom.zsh
 [[ -f ~/.config/zsh/plugins/fzf.zsh ]] && source ~/.config/zsh/plugins/fzf.zsh
+[[ -f ~/.config/zsh/plugins/ssh.zsh ]] && source ~/.config/zsh/plugins/ssh.zsh
 
 # Needed for fzf-tab plugin (https://github.com/Aloxaf/fzf-tab?tab=readme-ov-file)
 autoload -U compinit; compinit
@@ -43,7 +44,7 @@ eval "$(direnv hook zsh)"
 eval $(thefuck --alias)
 
 # Better history search
-# eval "$(atuin init zsh)"
+eval "$(atuin init zsh)"
 
 # Startship Shell (this has to be at the end of the file)
 eval "$(starship init zsh)"
