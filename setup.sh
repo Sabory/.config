@@ -10,4 +10,4 @@ ln -s ~/.config/git/.gitconfig ~/.gitconfig
 ln -s ~/.config/idea/.ideavimrc ~/.ideavimrc
 
 # installs
-brew install nvim fzf eza starship fd lazygit ripgrep cmake atuin tmuxp
+brew install nvim fzf eza starship fd lazygit ripgrep cmake atuin tmuxp git-delta

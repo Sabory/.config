@@ -6,16 +6,18 @@ return {
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
     "MunifTanjim/nui.nvim",
   },
-  opts = {
-    filesystem = {
-      filtered_items = {
-        visible = true,
-        hide_dotfiles = false,
-        hide_gitignored = true,
-      },
-    },
-  },
+  event = "VeryLazy",
   config = function()
+    require("neo-tree").setup({
+      filesystem = {
+        filtered_items = {
+          visible = true,
+          hide_dotfiles = false,
+          hide_gitignored = true,
+        }
+      }
+    })
+
     vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left toggle<CR>", {})
     vim.keymap.set("n", "<C-g>", ":Neotree git_status reveal left toggle<CR>", {})
   end,

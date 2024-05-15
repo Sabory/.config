@@ -1,6 +1,5 @@
 return {
 	"rcarriga/nvim-notify",
-	evnet = "VeryLazy",
 	config = function()
 		local loaded, notify = pcall(require, "notify")
 		if not loaded then

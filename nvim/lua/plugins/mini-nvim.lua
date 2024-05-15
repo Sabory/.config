@@ -2,13 +2,14 @@ return {
 	{
 		"echasnovski/mini.indentscope",
 		version = false,
+		event = "FileReadPost",
 		config = function()
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
-        callback = function()
-          vim.b.miniindentscope_disable = true
-        end,
-      })
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
+				callback = function()
+					vim.b.miniindentscope_disable = true
+				end,
+			})
 
 			local indentscope = require("mini.indentscope")
 
@@ -17,7 +18,7 @@ return {
 					-- Delay (in ms) between event and start of drawing scope indicator
 					delay = 100,
 					priority = 2,
-				  animation = indentscope.gen_animation.quadratic({easing='out', duration=100, unit='total'}),
+					animation = indentscope.gen_animation.quadratic({ easing = "out", duration = 100, unit = "total" }),
 				},
 
 				mappings = {
@@ -46,14 +47,15 @@ return {
 				},
 
 				-- Which character to use for drawing scope indicator
-        symbol = '|',
-        highlight = '',
+				symbol = "|",
+				highlight = "",
 			})
 		end,
 	},
 	{
 		"echasnovski/mini.pairs",
 		version = false,
+		event = "FileReadPost",
 		config = function()
 			require("mini.pairs").setup({
 				modes = { insert = true, command = false, terminal = false },
@@ -76,6 +78,7 @@ return {
 	{
 		"echasnovski/mini.ai",
 		version = false,
+		event = "FileReadPost",
 		config = function()
 			require("mini.ai").setup({
 				-- Table with textobject id as fields, textobject specification as values.
@@ -114,6 +117,7 @@ return {
 	},
 	{
 		"echasnovski/mini.surround",
+		event = "FileReadPost",
 		config = function()
 			require("mini.surround").setup({
 				version = false,

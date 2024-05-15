@@ -50,18 +50,18 @@ return {
       local on_attach = function()
         local opts = { buffer = 0 }
 
-        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-        vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-        vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-        vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-        vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, opts)
-        vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-        vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-        vim.keymap.set("n", "<leader>f", function()
+        vim.keymap.set("n", "<leader>ld", vim.lsp.buf.declaration, opts)
+        vim.keymap.set("n", "<leader>lD", vim.lsp.buf.definition, opts)
+        vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, opts)
+        vim.keymap.set("n", "<leader>li", vim.lsp.buf.implementation, opts)
+        vim.keymap.set("n", "<leader>lt", vim.lsp.buf.type_definition, opts)
+        vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, opts)
+        vim.keymap.set("n", "<leader>ln", vim.lsp.buf.rename, opts)
+        vim.keymap.set("n", "<leader>lf", function()
           vim.lsp.buf.format({ async = true })
         end, opts)
 
-        vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+        vim.keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, opts)
       end
 
       lspconfig.lua_ls.setup({

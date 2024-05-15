@@ -1,3 +1,7 @@
+[include]
+  path = ~/.config/delta/themes/catppuccin/catppuccin.gitconfig
+
+
 [user]
 	name = José Ignacio Correa Moreno
 	email = icorream213@gmail.com
@@ -12,13 +16,16 @@
 [core]
 	autocrlf = input
   pager = delta
-  editor = nvim
 
 [delta]
   navigate = true # use n and N to move between diffs sections
+  line-numbers = true
+  side-by-side = true
+  dark = true
+  features = catppuccin-mocha
 
 [interactive]
-  diffFilter = delta --colo-only
+  diffFilter = delta --color-only
 
 [merge]
   conflicstyle = diff3

@@ -1,25 +1,17 @@
-plugins=(
-  docker
-  git
-  virtualenv
-  rails
-  ruby
-  poetry
-)
-
 # Import zsh own modules
-[[ -f ~/.config/zsh/aliases.zsh ]] && source ~/.config/zsh/aliases.zsh
-[[ -f ~/.config/zsh/completions.zsh ]] && source ~/.config/zsh/completions.zsh
-[[ -f ~/.config/zsh/exports.zsh ]] && source ~/.config/zsh/exports.zsh
-[[ -f ~/.config/zsh//private/init.zsh ]] && source ~/.config/zsh//private/init.zsh
+source ~/.config/zsh/aliases.zsh
+source ~/.config/zsh/completions.zsh
+source ~/.config/zsh/exports.zsh
+source ~/.config/zsh//private/init.zsh
 
-[[ -f ~/.config/zsh/plugins/git-custom.zsh ]] && source ~/.config/zsh/plugins/git-custom.zsh
-[[ -f ~/.config/zsh/plugins/fzf.zsh ]] && source ~/.config/zsh/plugins/fzf.zsh
-[[ -f ~/.config/zsh/plugins/ssh.zsh ]] && source ~/.config/zsh/plugins/ssh.zsh
+source ~/.config/zsh/plugins/git/git.zsh
+source ~/.config/zsh/plugins/rails.zsh
+source ~/.config/zsh/plugins/fzf.zsh
+source ~/.config/zsh/plugins/ssh.zsh
 
 # Needed for fzf-tab plugin (https://github.com/Aloxaf/fzf-tab?tab=readme-ov-file)
 autoload -U compinit; compinit
-[[ -f ~/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh ]] && source ~/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
+source ~/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
 
 
 # Python venv

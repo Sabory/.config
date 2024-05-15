@@ -12,10 +12,14 @@ return {
 				gitsigns = true,
 				nvimtree = true,
 				treesitter = true,
-				notify = true,
 				fidget = true,
 				mason = true,
 				neotree = true,
+        neotest = true,
+        notify = true,
+        leap = true,
+        harpoon = true,
+        octo = true,
 				native_lsp = {
 					enabled = true,
 					virtual_text = {

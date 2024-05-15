@@ -36,4 +36,6 @@ export PATH=$PATH:$GOPATH/bin
 # tmuxp sessions directory
 export TMUXP_CONFIGDIR=$HOME/.config/tmux/tmuxp-sessions/
 
+export XDG_CONFIG_HOME=$HOME/.config/
+
 export GITHUB_TOKEN= gh auth login
