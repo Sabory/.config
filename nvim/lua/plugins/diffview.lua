@@ -10,4 +10,4 @@ return {
       end
     end, { desc = "Diffview | Toggle Diffview", silent = true })
   end,
- }
+}

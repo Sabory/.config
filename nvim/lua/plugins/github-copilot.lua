@@ -1,7 +1,7 @@
 return {
   -- copilot suggest something to proof you a working
   "github/copilot.vim",
-  event = "InsertEnter",
+  event = { "InsertEnter", "BufReadPost" },
   config = function()
     vim.keymap.set("i", "<C-j>", 'copilot#Accept("\\<CR>")', {
       expr = true,

@@ -47,57 +47,43 @@ return {
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       local lspconfig = require("lspconfig")
-      local on_attach = function()
-        local opts = { buffer = 0 }
-
-        vim.keymap.set("n", "<leader>ld", vim.lsp.buf.declaration, opts)
-        vim.keymap.set("n", "<leader>lD", vim.lsp.buf.definition, opts)
-        vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, opts)
-        vim.keymap.set("n", "<leader>li", vim.lsp.buf.implementation, opts)
-        vim.keymap.set("n", "<leader>lt", vim.lsp.buf.type_definition, opts)
-        vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, opts)
-        vim.keymap.set("n", "<leader>ln", vim.lsp.buf.rename, opts)
-        vim.keymap.set("n", "<leader>lf", function()
-          vim.lsp.buf.format({ async = true })
-        end, opts)
-
-        vim.keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, opts)
-      end
 
       lspconfig.lua_ls.setup({
-        on_attach = on_attach,
         capabilities = capabilities,
       })
       lspconfig.cssls.setup({
-        on_attach = on_attach,
         capabilities = capabilities,
       })
       lspconfig.gopls.setup({
-        on_attach = on_attach,
         capabilities = capabilities,
       })
       lspconfig.graphql.setup({
-        on_attach = on_attach,
         capabilities = capabilities,
       })
       lspconfig.tsserver.setup({
-        on_attach = on_attach,
         capabilities = capabilities,
       })
       lspconfig.pyright.setup({
-        on_attach = on_attach,
         capabilities = capabilities,
       })
       lspconfig.ruby_lsp.setup({
-        on_attach = on_attach,
         capabilities = capabilities,
       })
-    end,
-  },
-  {
-    "mihyaeru21/nvim-lspconfig-bundler",
-    config = function()
-      require("lspconfig-bundler").setup()
+
+      local opts = {}
+
+      vim.keymap.set("n", "<leader>ld", vim.lsp.buf.declaration, opts)
+      vim.keymap.set("n", "<leader>lD", vim.lsp.buf.definition, opts)
+      vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, opts)
+      vim.keymap.set("n", "<leader>li", vim.lsp.buf.implementation, opts)
+      vim.keymap.set("n", "<leader>lt", vim.lsp.buf.type_definition, opts)
+      vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, opts)
+      vim.keymap.set("n", "<leader>ln", vim.lsp.buf.rename, opts)
+      vim.keymap.set("n", "<leader>lf", function()
+        vim.lsp.buf.format({ async = true })
+      end, opts)
+
+      vim.keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, opts)
     end,
   },
 }

@@ -1,6 +1,7 @@
 return {
-	"petertriho/nvim-scrollbar",
-	config = function()
-		require("scrollbar").setup({})
-	end,
+  "petertriho/nvim-scrollbar",
+  event = "VeryLazy",
+  config = function()
+    require("scrollbar").setup({})
+  end,
 }

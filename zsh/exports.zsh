@@ -25,9 +25,13 @@ export GIT_EDITOR=nvim
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
 
-# Fix para compilar Ruby 2.6.6
-export RUBY_CFLAGS="-Wno-error=implicit-function-declaration"
+# Ruby
 export PATH=$PATH:$GEM_HOME/bin
+export RUBY_CFLAGS="-Wno-error=implicit-function-declaration" # flag needed for M chips in Mac
+export RUBY_CONFIGURE_OPTS="--enable-yjit"
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Go Lang
 export GOPATH=$HOME/go

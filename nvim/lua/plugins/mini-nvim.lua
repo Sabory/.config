@@ -2,7 +2,7 @@ return {
 	{
 		"echasnovski/mini.indentscope",
 		version = false,
-		event = "FileReadPost",
+		event = { "BufReadPost", "BufNewFile" },
 		config = function()
 			vim.api.nvim_create_autocmd("FileType", {
 				pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
@@ -55,7 +55,7 @@ return {
 	{
 		"echasnovski/mini.pairs",
 		version = false,
-		event = "FileReadPost",
+		event = { "BufReadPost", "BufNewFile" },
 		config = function()
 			require("mini.pairs").setup({
 				modes = { insert = true, command = false, terminal = false },
@@ -78,7 +78,7 @@ return {
 	{
 		"echasnovski/mini.ai",
 		version = false,
-		event = "FileReadPost",
+		event = { "BufReadPost", "BufNewFile" },
 		config = function()
 			require("mini.ai").setup({
 				-- Table with textobject id as fields, textobject specification as values.
@@ -117,7 +117,7 @@ return {
 	},
 	{
 		"echasnovski/mini.surround",
-		event = "FileReadPost",
+		event = { "BufReadPost", "BufNewFile" },
 		config = function()
 			require("mini.surround").setup({
 				version = false,
