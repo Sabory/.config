@@ -1,4 +1,2 @@
-require("autocommands")
-require("keymappings")
-require("options")
-require("lazy-nvim")
+require("jignacio.core")
+require("jignacio.lazy")

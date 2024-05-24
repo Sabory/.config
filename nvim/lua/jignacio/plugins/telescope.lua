@@ -43,22 +43,22 @@ return {
 		vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind by [G]rep" })
 		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
 		vim.keymap.set("n", "<leader><leader>", builtin.resume, { desc = "[] Resume Finding" })
-		vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = '[F]ind [R]ecent Files ("." for repeat)' })
+		vim.keymap.set("n", "<leader>fo", builtin.oldfiles, { desc = '[F]ind [o]pened Files ("." for repeat)' })
 		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind existing [B]uffers" })
 
 		-- Slightly advanced example of overriding default behavior and theme
 		-- It's also possible to pass additional configuration options.
 		--  See `:help telescope.builtin.live_grep()` for information about particular keys
-		vim.keymap.set("n", "<leader>s/", function()
+		vim.keymap.set("n", "<leader>f/", function()
 			builtin.live_grep({
 				grep_open_files = true,
 				prompt_title = "Live Grep in Open Files",
 			})
-		end, { desc = "[S]earch [/] in Open Files" })
+		end, { desc = "[F]ind [/] in Open Files" })
 
 		-- Shortcut for searching your Neovim configuration files
-		vim.keymap.set("n", "<leader>sn", function()
+		vim.keymap.set("n", "<leader>fn", function()
 			builtin.find_files({ cwd = vim.fn.stdpath("config") })
-		end, { desc = "[S]earch [N]eovim files" })
+		end, { desc = "[F]ind [N]eovim config files" })
 	end,
 }

@@ -41,3 +41,6 @@ eval "$(atuin init zsh)"
 # Startship Shell (this has to be at the end of the file)
 eval "$(starship init zsh)"
 
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

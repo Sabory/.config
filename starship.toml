@@ -22,7 +22,7 @@ disabled = true
 [git_branch]
 symbol = " "
 style = "purple"
-truncation_length = 45
+truncation_length = 80
 format = "on [$symbol$branch]($style) "
 
 

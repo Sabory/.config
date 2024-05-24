@@ -1,3 +1,4 @@
+---- Keybinds to make tab navigation easier.
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -52,10 +53,17 @@ vim.opt.splitbelow = true
 -- vim.opt.list = true
 -- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
+-- Set tabs to 2 spaces
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
+
+-- Enable auto indenting and set it to spaces
+vim.opt.smartindent = true
+vim.opt.shiftwidth = 2
+
+-- Enable smart indenting (see https://stackoverflow.com/questions/1204149/smart-wrap-in-vim)
+vim.opt.breakindent = true
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
@@ -64,13 +72,22 @@ vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 1
+vim.opt.scrolloff = 8
 
--- Turn of sounds
-vim.cmd("set noeb")
-vim.cmd("set novb")
-vim.cmd("set belloff=all")
+-- Place a column line
+-- vim.opt.colorcolumn = "120"
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
+
+-- Enable persistent undo history
+vim.opt.undofile = true
+
+-- Set fold settings
+-- These options were reccommended by nvim-ufo
+-- See: https://github.com/kevinhwang91/nvim-ufo#minimal-configuration
+vim.opt.foldcolumn = "0"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
 

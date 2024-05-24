@@ -36,19 +36,17 @@ return {
 		require("which-key").register({
 			{
 				["<leader>"] = {
-					d = { name = "󰃤 Debugger" },
-					r = { name = " Runner" },
-					-- s = { name = "󰔚 Sessions" },
-					f = { name = " Find" },
-					g = { name = "󰊢 Git" },
-					h = { name = " Harpoon" },
-					l = { name = " LSP" },
-					-- n = { name = " Neovim" },
-					-- o = { name = " Options" },
-					-- p = { name = " Plugins" },
-					-- t = { name = " Terminal" },
-					-- T = { name = "󰙨 Tests" },
-					-- v = { name = " Venv" },
+					d = { name = "Debugger" },
+					r = { name = "Refactor" },
+					f = { name = "Find" },
+					g = { name = "Git" },
+					h = { name = "Harpoon" },
+					l = { name = "LSP" },
+          e = { name = "Tree Explorer" },
+          p = { name = "Panes" },
+          t = { name = "Tabs" },
+          T = { name = "Tests" },
+          a = { name = "Ask Copilot"}
 				},
 			},
 		})

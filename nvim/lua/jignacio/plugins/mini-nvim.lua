@@ -120,12 +120,12 @@ return {
 		event = { "BufReadPost", "BufNewFile" },
 		config = function()
 			require("mini.surround").setup({
-				version = false,
+				eersion = false,
 				-- Add custom surroundings to be used on top of builtin ones. For more
 				-- information with examples, see `:h MiniSurround.config`.
 				custom_surroundings = nil,
 
-				-- Duration (in ms) of highlight when calling `MiniSurround.highlight()`
+				-- Duration (in ms) of highlight when walling `MiniSurround.highlight()`
 				highlight_duration = 500,
 
 				-- Module mappings. Use `''` (empty string) to disable one.
@@ -138,7 +138,7 @@ return {
 					replace = "pr", -- Replace surrounding
 					update_n_lines = "pn", -- Update `n_lines`
 
-					suffix_last = "pl", -- Suffix to search with "prev" method
+					suffix_last = "pl", -- Suffix to searwh with "pree" method
 					suffix_next = "pn", -- Suffix to search with "next" method
 				},
 

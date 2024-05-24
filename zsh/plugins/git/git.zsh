@@ -435,16 +435,58 @@ _update_references() {
   fi
 
   echo "Updating base branch: $base_branch"
-  $("git stash")
-  $("git checkout $base_branch")
-  $("git pull")
-  $("git checkout $current_branch")
+  git stash
+  git checkout $base_branch
+  git pull
+  git checkout $current_branch
 
   echo "Updating $current_branch references"
-  $("git rebase $base_branch $current_branch --update-refs --interactive")
+  git rebase $base_branch $current_branch --update-refs --interactive
 
   echo "Restoring stash"
-  $("git stash pop")
+  git stash pop
 }
 
 alias git-update-refs="_update_references"
+
+_change_ssh_profile() {
+  local arg=$1
+  shift
+
+  case "$arg" in
+    personal) profile="personal_gh";;
+    fintual) profile="fintual_gh";;
+  esac
+
+  if [ -z "$profile" ]; then
+    echo "Profile '$arg' do not exist... Elegible profiles: 'personal' | 'fintual'"
+
+    return 1 
+  fi
+
+  $(ssh-add -D)
+  $(ssh -T $profile)
+}
+
+alias change-ssh-profile="_change_ssh_profile"
+
+
+_checkout_to_new_pitch_part() {
+  local current_branch_name=$(git branch --show-current)
+  
+  # check if current_branch_name ends with -p<number> with regex
+  if [[ $current_branch_name =~ -p[0-9]+$ ]]
+  then
+    local current_branch_part=$(echo $current_branch_name | sed -E 's/.*-p([0-9]+)$/\1/')
+    local new_part=$((current_branch_part + 1))
+
+    local branch_name="$(echo $current_branch_name | sed -E 's/-p[0-9]+$//')-p$new_part"
+  else
+    local branch_name="$current_branch_name-p2"
+  fi
+
+  git checkout -b $branch_name
+}
+
+alias gco-new-part="_checkout_to_new_pitch_part"
+

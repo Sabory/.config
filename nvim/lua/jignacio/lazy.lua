@@ -12,6 +12,4 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.lsp.set_log_level("debug")
-
-require("lazy").setup("plugins")
+require("lazy").setup("jignacio.plugins")

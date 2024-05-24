@@ -3,7 +3,7 @@ return {
 	event = "VeryLazy",
 	dependencies = "nvim-lua/plenary.nvim",
 	config = function()
-		require("gitlinker").setup({ mappings = "<leader>gl" })
+		require("gitlinker").setup({ mappings = nil })
 
 		vim.api.nvim_set_keymap(
 			"n",
