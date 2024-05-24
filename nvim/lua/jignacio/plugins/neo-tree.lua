@@ -12,6 +12,7 @@ return {
 		require("neo-tree").setup({
       popup_border_style = "rounded",
 			filesystem = {
+        use_libuv_file_watcher = true,
 				filtered_items = {
 					visible = false,
 					hide_dotfiles = false,
