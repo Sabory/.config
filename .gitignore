@@ -41,3 +41,5 @@
 !/phoenix
 
 node_modules
+
+!/wezterm

@@ -48,7 +48,7 @@ const NORTH = 'north';
 const SOUTH = 'south';
 
 // Apps
-const TERMINAL_APP = 'iTerm';
+const TERMINAL_APP = 'WezTerm';
 const BROWSER_APP = 'Arc';
 const SLACK_APP = 'Slack';
 const IOS_SIMULATOR = 'Simulator';
