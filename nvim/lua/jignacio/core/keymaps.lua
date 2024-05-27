@@ -42,16 +42,6 @@ keymap(
 keymap("n", "<", "<<", { desc = "General | Indent backward", silent = true })
  keymap("n", ">", ">>", { desc = "General | Indent forward", silent = true })
 
-
--- Move lines up and down
-keymap("n", "<A-j>", "<cmd>m .+1<CR>==", { desc = "General | Move the line up", silent = true })
-keymap("n", "<A-k>", "<cmd>m .-2<CR>==", { desc = "General | Move the line down", silent = true })
-keymap("i", "<A-j>", "<Esc>:m .+1<CR>==gi", { desc = "General | Move the line up", silent = true })
-keymap("i", "<A-k>", "<Esc>:m .-2<CR>==gi", { desc = "General | Move the line down", silent = true })
-keymap("v", "<A-j>", "<cmd>m '>+1<CR>gv=gv", { desc = "General | Move the selected text up", silent = true })
-keymap("v", "<A-k>", "<cmd>m '<-2<CR>gv=gv", { desc = "General | Move the selected text down", silent = true })
-
-
 -- Clear search highlights
 keymap("n", "<leader>nh", ":nohl<CR>", { desc = "General | Clear search highlights", silent = true })
 

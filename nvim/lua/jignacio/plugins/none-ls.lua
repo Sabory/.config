@@ -19,8 +19,16 @@ return {
 				null_ls.builtins.diagnostics.rubocop,
 
 				null_ls.builtins.diagnostics.zsh,
-        null_ls.builtins.diagnostics.commitlint,
+				null_ls.builtins.diagnostics.commitlint,
+
+				null_ls.builtins.diagnostics.codespell,
+
 				require("none-ls.diagnostics.eslint_d"),
+				require("none-ls.formatting.eslint_d"),
+				require("none-ls.code_actions.eslint_d"),
+
+				null_ls.builtins.diagnostics.stylelint,
+				null_ls.builtins.formatting.stylelint,
 			},
 		})
 	end,

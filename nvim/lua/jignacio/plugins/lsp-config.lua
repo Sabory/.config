@@ -46,7 +46,6 @@ return {
 					"jsonls",
 					"bashls",
 					"lua_ls",
-					"typos_lsp",
 				},
 			})
 		end,
@@ -104,18 +103,6 @@ return {
 									callSnippet = "Replace",
 								},
 							},
-						},
-					})
-				end,
-				["typos_lsp"] = function()
-					lspconfig["typos_lsp"].setup({
-						init_options = {
-							-- Custom config. Used together with any workspace config files, taking precedence for
-							-- settings declared in both. Equivalent to the typos `--config` cli argument.
-							config = "~/.config/nvim/lua/jignacio/plugins/configs/typos.toml",
-							-- How typos are rendered in the editor, can be one of an Error, Warning, Info or Hint.
-							-- Defaults to error.
-							diagnosticSeverity = "Warning",
 						},
 					})
 				end,
