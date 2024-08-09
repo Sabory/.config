@@ -37,6 +37,7 @@ return {
 			{
 				["<leader>"] = {
 					d = { name = "Debugger" },
+          c = { name = "Coverage" },
 					r = { name = "Refactor" },
 					f = { name = "Find" },
 					g = { name = "Git" },
@@ -44,8 +45,8 @@ return {
 					l = { name = "LSP" },
           e = { name = "Tree Explorer" },
           p = { name = "Panes" },
-          t = { name = "Tabs" },
-          T = { name = "Tests" },
+          t = { name = "tests" },
+          T = { name = "Tabs" },
           a = { name = "Ask Copilot"}
 				},
 			},

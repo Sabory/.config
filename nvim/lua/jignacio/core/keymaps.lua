@@ -25,22 +25,12 @@ keymap("n", "<C-l>", "<C-w>l", { desc = "General | Go to right window", silent =
 -- Resize windows
 keymap("n", "<C-Up>", "<cmd>resize +2<CR>", { desc = "General | Add size at the top", silent = true })
 keymap("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "General | Add size at the bottom", silent = true })
-keymap(
-  "n",
-  "<C-Right>",
-  "<cmd>vertical resize +2<CR>",
-  { desc = "General | Add size at the left", silent = true }
-)
-keymap(
-  "n",
-  "<C-Left>",
-  "<cmd>vertical resize -2<CR>",
-  { desc = "General | Add size at the right", silent = true }
-)
+keymap("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "General | Add size at the left", silent = true })
+keymap("n", "<C-Left>", "<cmd>vertical resize -2<CR>", { desc = "General | Add size at the right", silent = true })
 
 -- Easier Indenting
 keymap("n", "<", "<<", { desc = "General | Indent backward", silent = true })
- keymap("n", ">", ">>", { desc = "General | Indent forward", silent = true })
+keymap("n", ">", ">>", { desc = "General | Indent forward", silent = true })
 
 -- Clear search highlights
 keymap("n", "<leader>nh", ":nohl<CR>", { desc = "General | Clear search highlights", silent = true })
@@ -52,11 +42,11 @@ keymap("n", "<leader>pe", "<C-w>=", { desc = "[P]ane [E]qualize sizes" })
 keymap("n", "<leader>pc", "<C-w>q", { desc = "[P]ane [C]lose" })
 
 -- Tabs management
-keymap("n", "<leader>to", ":tabnew<CR>", { desc = "[T]ab [O]pen new" })
-keymap("n", "<leader>tc", ":tabclose<CR>", { desc = "[T]ab [C]lose" })
-keymap("n", "<leader>tn", ":tabn<CR>", { desc = "[T]ab [N]ext" })
-keymap("n", "<leader>tp", ":tabp<CR>", { desc = "[T]ab [P]revious" })
-keymap("n", "<leader>tb", ":tabnew %<CR>", { desc = "[T]ab open new with current [B]uffer" })
+keymap("n", "<leader>To", ":tabnew<CR>", { desc = "[T]ab [O]pen new" })
+keymap("n", "<leader>Tc", ":tabclose<CR>", { desc = "[T]ab [C]lose" })
+keymap("n", "<leader>Tn", ":tabn<CR>", { desc = "[T]ab [N]ext" })
+keymap("n", "<leader>Tp", ":tabp<CR>", { desc = "[T]ab [P]revious" })
+keymap("n", "<leader>Tb", ":tabnew %<CR>", { desc = "[T]ab open new with current [B]uffer" })
 
 -- Keybinds to make tab navigation easier.
 keymap("n", "<TAB>", "gt", { desc = "Go to next tab" })
@@ -68,19 +58,18 @@ keymap("n", "<S-TAB>", "gT", { desc = "Go to previous tab" })
 
 -- Close all fold except the current one.
 keymap("n", "zv", "zMzvzz", {
-  desc = "Close all folds except the current one",
+	desc = "Close all folds except the current one",
 })
 
 -- Close current fold when open. Always open next fold.
 keymap("n", "zj", "zcjzOzz", {
-  desc = "Close current and open next fold.",
+	desc = "Close current and open next fold.",
 })
 
 -- Close current fold when open. Always open previous fold.
 keymap("n", "zk", "zckzOzz", {
-  desc = "Close current fold and open previous fold.",
+	desc = "Close current fold and open previous fold.",
 })
-
 
 -- Better paste
 -- remap "p" in visual mode to delete the highlighted text without overwriting your yanked/copied text, and then paste the content from the unnamed register.
@@ -89,7 +78,6 @@ keymap("v", "p", '"_dP', opts)
 -- Hotfix: something is interfiring with pasting in normal mode. This fix it.
 keymap("n", "p", "p")
 
-
 -- Copy whole file content to clipboard with C-c
 keymap("n", "<C-c>", ":%y+<CR>", opts)
 
@@ -97,11 +85,15 @@ keymap("n", "<C-c>", ":%y+<CR>", opts)
 keymap("n", "<A-a>", "ggVG", { noremap = true, silent = true, desc = "Select all" })
 
 -- Easier access to beginning and end of lines
-keymap("n", "<A-h>", "^", {
-  desc = "Go to start of line",
-  silent = true,
+keymap("n", "<S-h>", "^", {
+	desc = "Go to start of line",
+	silent = true,
 })
-keymap("n", "<A-l>", "$", {
-  desc = "Go to end of line",
-  silent = true,
+keymap("n", "<S-l>", "$", {
+	desc = "Go to end of line",
+	silent = true,
 })
+
+-- Better Save
+keymap({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+keymap({ "x", "n", "s" }, "<leader>w", "<cmd>w<cr>", { desc = "Save file" })

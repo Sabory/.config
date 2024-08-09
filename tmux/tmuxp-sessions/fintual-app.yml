@@ -35,5 +35,7 @@ windows:
       - shell_command:
           - nvim
       - shell_command:
-          - yarn start
+          - cd cl
+          - yarn install
+          - yarn dev
       - shell_command:

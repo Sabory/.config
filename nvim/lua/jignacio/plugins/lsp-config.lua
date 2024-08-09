@@ -149,7 +149,7 @@ return {
 					opts.desc = "[L]SP code [A]ction"
 					vim.keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, opts)
 
-					opts.desc = "[L]SP restart"
+					opts.desc = "[L]SP [R]estart"
 					vim.keymap.set("n", "<leader>lc", ":LspRestart<CR>", opts)
 				end,
 			})

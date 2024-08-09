@@ -44,3 +44,9 @@ eval "$(starship init zsh)"
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jignacio/Downloads/Browsers/💻 Work/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jignacio/Downloads/Browsers/💻 Work/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jignacio/Downloads/Browsers/💻 Work/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jignacio/Downloads/Browsers/💻 Work/google-cloud-sdk/completion.zsh.inc'; fi

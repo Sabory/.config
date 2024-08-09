@@ -13,6 +13,7 @@ return {
         changedelete = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
       },
       attach_to_untracked = false,
+      current_line_blame_formatter = '<author> • <date> • <summary>',
       preview_config = {
         -- Options passed to nvim_open_win
         border = "rounded",

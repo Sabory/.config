@@ -3,12 +3,10 @@ export LANG=en_US.UTF-8
 # Stuff needed for Tmuxp
 export DISABLE_AUTO_TITLE='true'
 
-# ANDROID STUDIO
-export JAVA_HOME=$(/usr/libexec/java_home -v 11) # This will return the path to your Java installation
+# ANDROID Emulator setup for RN: https://reactnative.dev/docs/set-up-your-environment?platform=android
+export JAVA_HOME=$(/usr/libexec/java_home -v 17) # This will return the path to your Java installation
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # SCRAPY PYTHON
